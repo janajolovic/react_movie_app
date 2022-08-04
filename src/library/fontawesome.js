@@ -1,12 +1,18 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import {
-  faUser,
+  faCircleUser,
   faHome,
+  faClapperboard,
+  faStar,
+  faFireFlameCurved
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
   fas,
   faHome,
-  faUser,
+  faCircleUser,
+  faClapperboard,
+  faStar,
+  faFireFlameCurved
 );
