@@ -1,11 +1,13 @@
 import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
+    const navigate = useNavigate()
   return (
     <div className='sidebar'>
         <div>
-            <FontAwesomeIcon icon="fa-solid fa-house" />
+            <FontAwesomeIcon icon="fa-solid fa-house" onClick={() => navigate("/")}/>
         </div>
         <div>
             <FontAwesomeIcon icon="fa-solid fa-clapperboard" />
