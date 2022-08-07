@@ -123,7 +123,7 @@ body {
 }
 
 .details p {
-  margin: 8px 0;
+  margin: 10px 0;
   font-size: 16px;
 }
 
@@ -132,5 +132,13 @@ body {
   color: #546487;
   margin-right: 20px;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 8px;
+}
+
+.back_icon:hover {
+  color: purple;
+}
+
+.details a {
+  color: #546487;
 }
