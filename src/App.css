@@ -99,7 +99,7 @@ body {
 
 .details_container {
   display: flex;
-  padding: 50px 100px;
+  padding: 50px 90px;
 }
 
 .details_container img {
@@ -127,3 +127,10 @@ body {
   font-size: 16px;
 }
 
+.back_icon {
+  background-color: #171e31;
+  color: #546487;
+  margin-right: 20px;
+  padding: 10px;
+  border-radius: 10px;
+}

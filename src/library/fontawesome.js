@@ -5,7 +5,9 @@ import {
   faHome,
   faClapperboard,
   faStar,
-  faFireFlameCurved
+  faFireFlameCurved,
+  faArrowLeft,
+  faArrowUpRightFromSquare
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -14,5 +16,7 @@ library.add(
   faCircleUser,
   faClapperboard,
   faStar,
-  faFireFlameCurved
+  faFireFlameCurved,
+  faArrowLeft,
+  faArrowUpRightFromSquare
 );
