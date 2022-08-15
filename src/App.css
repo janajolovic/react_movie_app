@@ -142,3 +142,29 @@ body {
 .details a {
   color: #546487;
 }
+
+.search-movies {
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px 0;
+  border-radius: 25px;
+}
+
+.search-movies svg {
+  font-size: 16px;
+}
+
+.search-movies input {
+  background-color: transparent;
+  border: none;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: hsl(224, 32%, 94%);
+  margin-left: 15px;
+  width: 80%;
+}
+
+.search-movies input:focus {
+  outline: none;
+}
+
