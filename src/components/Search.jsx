@@ -7,7 +7,15 @@ const Search = () => {
   const { fetchPopular, fetchSearch } = useContext(MovieContext);
 
   const onKeyUp = (event) => {
-    
+    if (event.key === "Enter" && value !== "") {
+        const query = value.trim();
+        if (query === "") {
+          fetchPopular();
+        } else {
+          fetchSearch(query);
+        }
+        setValue("");
+      }
   };
 
   return (
