@@ -148,10 +148,8 @@ body {
   margin-top: 15px;
   padding: 10px 0;
   border-radius: 25px;
-}
-
-.search-movies svg {
-  font-size: 16px;
+  margin-left: 30px;
+  color: #546487;
 }
 
 .search-movies input {

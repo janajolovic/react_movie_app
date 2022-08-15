@@ -19,12 +19,24 @@ export function MovieProvider({ children }) {
       }
     }
 
+
+    const fetchSearch = async (query) => {
+      try {
+        let response = await axios
+        .get(`https://api.themoviedb.org/3/search/movie?api_key=b454aa11fb4b5fc5b515d2e80a898a1c&language=en-US&query=${query}&page=1&include_adult=false`)
+        setMovies(response.data.results)
+      } catch (err) {
+        console.log(err)
+      }
+    };
+
   return (
     <MovieContext.Provider
       value={{
         movies,
         setMovies,
-        fetchPopular
+        fetchPopular,
+        fetchSearch
       }}
     >
       {children}

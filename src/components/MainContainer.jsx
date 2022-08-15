@@ -8,8 +8,10 @@ const MainContainer = () => {
   return (
     <div className='main_container'>
         <Sidebar />
-        <Search />
-        <MoviesList />
+        <div>
+          <Search />
+          <MoviesList />
+        </div>
     </div>
   )
 }
