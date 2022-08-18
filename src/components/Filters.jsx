@@ -19,7 +19,26 @@ const Filters = () => {
       }, [activeGenre]);
 
   return (
-    <div>Filters</div>
+    <div className="filter-container">
+        <button
+        className={activeGenre === 0 ? "active" : null}
+        onClick={() => setActiveGenre(0)}
+        >
+        All
+        </button>
+        <button
+        className={activeGenre === 28 ? "active" : null}
+        onClick={() => setActiveGenre(28)}
+        >
+        Action
+        </button>
+        <button
+        className={activeGenre === 12 ? "active" : null}
+        onClick={() => setActiveGenre(12)}
+        >
+        Adventure
+        </button>
+    </div>
   )
 }
 
