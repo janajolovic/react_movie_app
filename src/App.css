@@ -166,3 +166,43 @@ body {
   outline: none;
 }
 
+
+.filter-container {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.filter-container button {
+  background-color: hsl(223, 36%, 16%);
+  color: hsl(223, 36%, 94%);
+  font-family: "Inter", sans-serif;
+  border-radius: 15px;
+  border: none;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.filter-container button:hover {
+  background-color: hsl(223, 36%, 24%);
+}
+
+.filter-container button.active {
+  background-color: hsl(224, 32%, 94%);
+  color: hsl(224, 32%, 9%);
+}
+
+.filter-container button.more {
+  color: hsl(221, 23%, 63%);
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  padding: 0 10px;
+}
+
+.filter-container button.more:hover {
+  background-color: hsl(223, 36%, 24%);
+}
