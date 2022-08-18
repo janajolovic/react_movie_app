@@ -50,7 +50,9 @@ const Filters = () => {
           </button>
         ))}
       <button className="more" onClick={() => setMoreGenres(!moreGenres)}>
-        {moreGenres ? <FontAwesomeIcon icon="fa-solid fa-arrow-left-to-line" /> : <FontAwesomeIcon icon="fa-solid fa-ellipsis" />}
+        {moreGenres 
+            ? <FontAwesomeIcon style={{fontSize : "16px"}} icon="fa-solid fa-chevron-left" />
+            : <FontAwesomeIcon style={{fontSize : "16px"}} icon="fa-solid fa-ellipsis" />}
       </button>
     </div>
   )

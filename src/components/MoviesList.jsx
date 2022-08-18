@@ -4,7 +4,7 @@ import Movie from './Movie'
 
 const MoviesList = () => {
 
-  const {movies, fetchPopular} = useContext(MovieContext)
+  const {movies, fetchPopular, filtered} = useContext(MovieContext)
 
   useEffect(() => {
     fetchPopular()
@@ -12,7 +12,7 @@ const MoviesList = () => {
 
   return (
     <div className='movies_list'>
-        {movies.map((movie) => {
+        {filtered.map((movie) => {
           return <Movie key={movie.id} movie={movie} />;
         })}
     </div>

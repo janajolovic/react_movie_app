@@ -10,7 +10,7 @@ import {
   faArrowUpRightFromSquare,
   faMagnifyingGlass,
   faEllipsis,
-  faArrowsLeftRightToLine
+  faChevronLeft
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -24,5 +24,5 @@ library.add(
   faEllipsis,
   faArrowUpRightFromSquare,
   faMagnifyingGlass,
-  faArrowsLeftRightToLine
+  faChevronLeft
 );
