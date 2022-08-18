@@ -38,6 +38,20 @@ const Filters = () => {
         >
         Adventure
         </button>
+
+        {moreGenres &&
+        genres.map((genre) => (
+          <button
+            key={genre.id}
+            className={activeGenre === genre.id ? "active" : null}
+            onClick={() => setActiveGenre(genre.id)}
+          >
+            {genre.name}
+          </button>
+        ))}
+      <button className="more" onClick={() => setMoreGenres(!moreGenres)}>
+        {moreGenres ? <FontAwesomeIcon icon="fa-solid fa-arrow-left-to-line" /> : <FontAwesomeIcon icon="fa-solid fa-ellipsis" />}
+      </button>
     </div>
   )
 }
