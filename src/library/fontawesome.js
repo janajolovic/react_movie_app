@@ -8,7 +8,9 @@ import {
   faFireFlameCurved,
   faArrowLeft,
   faArrowUpRightFromSquare,
-  faMagnifyingGlass
+  faMagnifyingGlass,
+  faEllipsis,
+  faArrowsLeftRightToLine
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -19,6 +21,8 @@ library.add(
   faStar,
   faFireFlameCurved,
   faArrowLeft,
+  faEllipsis,
   faArrowUpRightFromSquare,
-  faMagnifyingGlass
+  faMagnifyingGlass,
+  faArrowsLeftRightToLine
 );

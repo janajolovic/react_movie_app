@@ -14,9 +14,6 @@ const Sidebar = () => {
             <FontAwesomeIcon icon="fa-solid fa-house" onClick={() => navigate("/")}/>
         </div>
         <div>
-            <FontAwesomeIcon icon="fa-solid fa-magnifying-glass"/>
-        </div>
-        <div>
             <FontAwesomeIcon icon="fa-solid fa-clapperboard" />
         </div>
         <div>
