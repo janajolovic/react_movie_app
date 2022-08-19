@@ -14,7 +14,9 @@ const MainContainer = () => {
           <Search />
           <Filters />
           <MoviesList />
-          <Pagination count={10} color="secondary" style={{color: "white"}} />
+          <div className="pagination">
+            <Pagination count={10} color="secondary" style={{color: "white"}} />
+          </div>
         </div>
     </div>
   )

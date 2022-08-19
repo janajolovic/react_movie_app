@@ -210,3 +210,11 @@ body {
 .filter-container button.more:hover {
   background-color: hsl(223, 36%, 24%);
 }
+
+.pagination {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30px;
+}
