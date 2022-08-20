@@ -23,7 +23,7 @@ const Sidebar = () => {
             <FontAwesomeIcon icon="fa-solid fa-star" />
         </div>
         <div>
-            <FontAwesomeIcon icon="fa-solid fa-circle-user" />
+            <FontAwesomeIcon icon="fa-solid fa-circle-user" onClick={() => navigate("/login")}/>
         </div>
     </div>
   )
