@@ -7,7 +7,7 @@ export function MovieProvider({ children }) {
   const [movies, setMovies] = useState([]);
   const [activeGenre, setActiveGenre] = useState(0);
   const [filtered, setFiltered] = useState([]);
-
+  const [favourites, setFavourites] = useLocalStorage("fav", []);
 
   const fetchPopular = async () => {
     try {
@@ -31,6 +31,21 @@ export function MovieProvider({ children }) {
         setActiveGenre(0);
       } catch (err) {
         console.log(err)
+      }
+    };
+
+    const addToFavourites = (movie) => {
+      let isOnArray = false;
+      favourites.map((fav) => {
+        if (fav.id === movie.id) {
+          isOnArray = true;
+        }
+      });
+  
+      if (isOnArray) {
+        setFavourites(favourites.filter((fav) => fav.id !== movie.id));
+      } else {
+        setFavourites((prevState) => [...prevState, movie]);
       }
     };
 
