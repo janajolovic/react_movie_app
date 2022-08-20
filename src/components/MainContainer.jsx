@@ -10,7 +10,7 @@ const MainContainer = () => {
   return (
     <div className='main_container'>
         <Sidebar />
-        <div>
+        <div style={{width: "100%"}}>
           <Search />
           <Filters />
           <MoviesList />

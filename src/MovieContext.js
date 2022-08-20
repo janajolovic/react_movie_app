@@ -7,7 +7,7 @@ export function MovieProvider({ children }) {
   const [movies, setMovies] = useState([]);
   const [activeGenre, setActiveGenre] = useState(0);
   const [filtered, setFiltered] = useState([]);
-  const [favourites, setFavourites] = useLocalStorage("fav", []);
+  const [favourites, setFavourites] = useState();
 
   const fetchPopular = async () => {
     try {
