@@ -49,6 +49,17 @@ export function MovieProvider({ children }) {
       }
     };
 
+    const getFavourites = () => {
+      setMovies(favourites);
+      setFiltered(favourites);
+      setActiveGenre(0);
+    };
+  
+    const isFav = (id) => {
+      let fav = favourites.filter((fav) => fav.id === id);
+      return fav.length === 0 ? true : false;
+    };
+
   return (
     <MovieContext.Provider
       value={{
@@ -59,7 +70,12 @@ export function MovieProvider({ children }) {
         activeGenre,
         setActiveGenre,
         filtered,
-        setFiltered
+        setFiltered,
+        favourites,
+        setFavourites,
+        getFavourites,
+        isFav,
+        addToFavourites
       }}
     >
       {children}
