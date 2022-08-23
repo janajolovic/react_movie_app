@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Movie = ({movie}) => {
+  
+  const { addToFavourites, isFav } = useContext(MovieContext);
+  
   return (
     <motion.div
       animate={{ opacity: 1 }}
@@ -11,6 +15,11 @@ const Movie = ({movie}) => {
       layout
       className="movie"
     >
+      {isFav(movie.id) ? (
+        <FontAwesomeIcon icon="fa-solid fa-star" onClick={() => addToFavourites(movie)} />
+      ) : (
+        <FontAwesomeIcon icon="fa-solid fa-star" onClick={() => addToFavourites(movie)} />
+      )}
       <Link to={`/movie/${movie.id}`} key={movie.id} >
       <div className="shadow"></div>
         </Link>
