@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import axios from "axios";
+import { useLocalStorage } from "./useLocalStorage";
 
 const MovieContext = createContext();
 
@@ -7,7 +8,7 @@ export function MovieProvider({ children }) {
   const [movies, setMovies] = useState([]);
   const [activeGenre, setActiveGenre] = useState(0);
   const [filtered, setFiltered] = useState([]);
-  const [favourites, setFavourites] = useState();
+  const [favourites, setFavourites] = useLocalStorage("fav", []);
 
   const fetchPopular = async () => {
     try {

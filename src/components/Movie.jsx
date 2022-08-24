@@ -17,9 +17,34 @@ const Movie = ({movie}) => {
       className="movie"
     >
       {isFav(movie.id) ? (
-        <FontAwesomeIcon icon="fa-solid fa-star" onClick={() => addToFavourites(movie)} />
+        <FontAwesomeIcon 
+          icon="fa-solid fa-star" 
+          onClick={() => addToFavourites(movie)} 
+          style={{
+            position: "absolute",
+            right: "15px",
+            top: "15px",
+            fontSize: "24px",
+            cursor: "pointer",
+            zIndex: "1",
+            opacity: "1",
+            color: "yellow",
+          }}
+        />
       ) : (
-        <FontAwesomeIcon icon="fa-solid fa-star" onClick={() => addToFavourites(movie)} />
+        <FontAwesomeIcon 
+          icon="fa-solid fa-star" 
+          onClick={() => addToFavourites(movie)} 
+          style={{
+            position: "absolute",
+            right: "15px",
+            top: "15px",
+            fontSize: "24px",
+            cursor: "pointer",
+            zIndex: "1",
+            opacity: "0.6"
+          }}
+        />
       )}
       <Link to={`/movie/${movie.id}`} key={movie.id} >
       <div className="shadow"></div>
