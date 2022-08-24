@@ -27,8 +27,7 @@ const Movie = ({movie}) => {
             fontSize: "24px",
             cursor: "pointer",
             zIndex: "1",
-            opacity: "1",
-            color: "yellow",
+            opacity: "0.7"
           }}
         />
       ) : (
@@ -42,7 +41,8 @@ const Movie = ({movie}) => {
             fontSize: "24px",
             cursor: "pointer",
             zIndex: "1",
-            opacity: "0.6"
+            opacity: "1",
+            color: "yellow"
           }}
         />
       )}

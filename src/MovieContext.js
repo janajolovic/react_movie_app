@@ -47,6 +47,7 @@ export function MovieProvider({ children }) {
         setFavourites(favourites.filter((fav) => fav.id !== movie.id));
       } else {
         setFavourites((prevState) => [...prevState, movie]);
+        console.log(favourites)
       }
     };
 

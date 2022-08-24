@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { logout } from "../useLocalStorage";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -25,6 +26,7 @@ const Login = () => {
     });
     console.log(inputs)
     navigate("/");
+    logout()
   };
 
   return (
