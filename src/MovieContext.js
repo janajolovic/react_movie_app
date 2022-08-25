@@ -9,6 +9,7 @@ export function MovieProvider({ children }) {
   const [activeGenre, setActiveGenre] = useState(0);
   const [filtered, setFiltered] = useState([]);
   const [favourites, setFavourites] = useLocalStorage("fav", []);
+  const [user, setUser] = useLocalStorage("user", {})
 
   const fetchPopular = async () => {
     try {
@@ -62,6 +63,10 @@ export function MovieProvider({ children }) {
       return fav.length === 0 ? true : false;
     };
 
+    const login = (user) => {
+        setUser(user)
+    }
+
   return (
     <MovieContext.Provider
       value={{
@@ -77,7 +82,10 @@ export function MovieProvider({ children }) {
         setFavourites,
         getFavourites,
         isFav,
-        addToFavourites
+        addToFavourites,
+        user,
+        setUser,
+        login
       }}
     >
       {children}

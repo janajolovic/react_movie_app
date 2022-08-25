@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { logout } from "../useLocalStorage";
+import MovieContext from "../MovieContext";
 
 const Login = () => {
   const navigate = useNavigate();
+
+  const {login} = useContext(MovieContext)
 
   const [inputs, setInputs] = useState({
     email: "",
@@ -25,8 +27,8 @@ const Login = () => {
       password: "",
     });
     console.log(inputs)
+    login({email: inputs.email})
     navigate("/");
-    logout()
   };
 
   return (
