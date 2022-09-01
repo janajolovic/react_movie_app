@@ -1,11 +1,12 @@
 import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import MovieContext from "../MovieContext";
+import { logout, useLocalStorage } from "../useLocalStorage";
 
 const Login = () => {
   const navigate = useNavigate();
 
-  const {login} = useContext(MovieContext)
+  const {login, user} = useContext(MovieContext)
 
   const [inputs, setInputs] = useState({
     email: "",
@@ -33,7 +34,9 @@ const Login = () => {
 
   return (
     <div className="login_container">
-      <div className="login_form">
+      {console.log(user.email)}
+      {!user.email ? (
+        <div className="login_form">
         <div className="login_left">
           <h1>Login</h1>
           <form onSubmit={signInHandler}>
@@ -60,6 +63,16 @@ const Login = () => {
           <img src="https://ak15suthar.github.io/Portfolio/img/work.png"></img>
         </div>
       </div>
+      ) 
+      : 
+      <div className="logout">
+        <h2>Email: {user.email}</h2>
+        <button onClick={() => {
+          logout()
+          navigate("/")
+        }}>Logout</button>
+      </div>
+    }
     </div>
   );
 };
