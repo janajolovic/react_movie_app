@@ -68,7 +68,11 @@ const Login = () => {
       : 
       <div className="logout">
         <div>
-            <FontAwesomeIcon icon="fa-solid fa-circle-user" onClick={() => navigate("/login")}/>
+            <FontAwesomeIcon 
+              style={{fontSize: "150px"}}
+              icon="fa-solid fa-circle-user" 
+              onClick={() => navigate("/login")}
+            />
         </div>
         <h2>Email: {user.email}</h2>
         <button onClick={() => {

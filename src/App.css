@@ -307,3 +307,29 @@ body {
     color: gray;
     font-size: 14px;
 }
+
+.logout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logout h2 {
+  margin: 20px 0;
+}
+
+.logout button {
+  padding: 16px 12px;
+  border: 1px solid #e5e5e5;
+  border-radius: 50px;
+  width: 50%;
+  margin: 10px 0;
+  font-size: 18px;
+  background-color: purple;
+  color: #fff;
+  font-weight: 600;
+}
