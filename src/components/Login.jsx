@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import MovieContext from "../MovieContext";
 import { logout, useLocalStorage } from "../useLocalStorage";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -66,10 +67,14 @@ const Login = () => {
       ) 
       : 
       <div className="logout">
+        <div>
+            <FontAwesomeIcon icon="fa-solid fa-circle-user" onClick={() => navigate("/login")}/>
+        </div>
         <h2>Email: {user.email}</h2>
         <button onClick={() => {
           logout()
           navigate("/")
+          window.location.reload(false);
         }}>Logout</button>
       </div>
     }
