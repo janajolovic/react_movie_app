@@ -35,6 +35,7 @@ const Login = () => {
 
   return (
     <div className="login_container">
+      <FontAwesomeIcon className="back_icon" icon="fa-solid fa-arrow-left" onClick={() => navigate("/")}/>
       {console.log(user.email)}
       {!user.email ? (
         <div className="login_form">
