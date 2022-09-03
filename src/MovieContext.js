@@ -10,11 +10,12 @@ export function MovieProvider({ children }) {
   const [filtered, setFiltered] = useState([]);
   const [favourites, setFavourites] = useLocalStorage("fav", []);
   const [user, setUser] = useLocalStorage("user", {})
+  const [page, setPage] = useState(1);
 
   const fetchPopular = async () => {
     try {
       let response = await axios
-        .get(`https://api.themoviedb.org/3/movie/popular?api_key=b454aa11fb4b5fc5b515d2e80a898a1c&language=en-US&page=1`)
+        .get(`https://api.themoviedb.org/3/movie/popular?api_key=b454aa11fb4b5fc5b515d2e80a898a1c&language=en-US&page=${page}`)
         setMovies(response.data.results);
         setFiltered(response.data.results)
         setActiveGenre(0);
@@ -85,7 +86,8 @@ export function MovieProvider({ children }) {
         addToFavourites,
         user,
         setUser,
-        login
+        login,
+        page, setPage
       }}
     >
       {children}

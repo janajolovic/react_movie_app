@@ -4,11 +4,11 @@ import Movie from './Movie'
 
 const MoviesList = () => {
 
-  const {movies, fetchPopular, filtered} = useContext(MovieContext)
+  const {movies, fetchPopular, filtered, page} = useContext(MovieContext)
 
   useEffect(() => {
     fetchPopular()
-  }, [])
+  }, [page])
 
   return (
     <div className={filtered.length ? "movies_list" : "no_results"}>

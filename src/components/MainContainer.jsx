@@ -8,7 +8,7 @@ import MovieContext from '../MovieContext'
 
 const MainContainer = () => {
   
-  const {filtered} = useContext(MovieContext)
+  const {filtered, setPage, page} = useContext(MovieContext)
 
   return (
     <div className='main_container'>
@@ -19,7 +19,10 @@ const MainContainer = () => {
           <MoviesList />
           {filtered.length ? 
             <div className="pagination">
-              <Pagination count={10} color="secondary" style={{color: "white"}} />
+              
+                <button 
+                  onClick={() => {setPage((prevState) => prevState += 1)}}
+                  >Load more...</button>
             </div>
             : ""
           }
