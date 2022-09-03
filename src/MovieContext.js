@@ -16,8 +16,21 @@ export function MovieProvider({ children }) {
     try {
       let response = await axios
         .get(`https://api.themoviedb.org/3/movie/popular?api_key=b454aa11fb4b5fc5b515d2e80a898a1c&language=en-US&page=${page}`)
-        setMovies(response.data.results);
-        setFiltered(response.data.results)
+        setMovies( 
+          (prevState) => {
+            if (prevState) {
+              return [
+                ...prevState, ...response.data.results 
+              ]
+            } else return response.data.results
+        });
+        setFiltered((prevState) => {
+          if (prevState) {
+            return [
+              ...prevState, ...response.data.results 
+            ]
+          } else return response.data.results
+      })
         setActiveGenre(0);
       } catch (err) {
         console.log(err)

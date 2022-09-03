@@ -4,7 +4,7 @@ import Movie from './Movie'
 
 const MoviesList = () => {
 
-  const {movies, fetchPopular, filtered, page} = useContext(MovieContext)
+  const {fetchPopular, filtered, page} = useContext(MovieContext)
 
   useEffect(() => {
     fetchPopular()
