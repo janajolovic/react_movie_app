@@ -14,6 +14,8 @@ const Login = () => {
     password: "",
   });
 
+  const [error, setError] = useState("")
+
   const changeHandler = (event) => {
     event.preventDefault();
     setInputs({
@@ -22,13 +24,25 @@ const Login = () => {
     });
   };
 
+  const validateFormInputs = () => {
+    let isValid = true;
+    if (inputs.email === "" || inputs.password === "") {
+      setError("Input field required")
+      isValid = false;
+    }
+    return isValid
+  }
+
   const signInHandler = (event) => {
     event.preventDefault();
+    if (!validateFormInputs()) {
+      return;
+    }
     setInputs({
       email: "",
       password: "",
     });
-    console.log(inputs)
+    // setError("")
     login({email: inputs.email})
     navigate("/");
   };
@@ -36,13 +50,13 @@ const Login = () => {
   return (
     <div className="login_container">
       <FontAwesomeIcon className="back_icon" icon="fa-solid fa-arrow-left" onClick={() => navigate("/")}/>
-      {console.log(user.email)}
       {!user.email ? (
         <div className="login_form">
         <div className="login_left">
           <h1>Login</h1>
           <form onSubmit={signInHandler}>
             <input
+              className={error ? "error" : ""}
               onChange={changeHandler}
               value={inputs.email}
               type="email"
@@ -51,6 +65,7 @@ const Login = () => {
               id="email"
             ></input>
             <input
+              className={error ? "error" : ""}
               onChange={changeHandler}
               value={inputs.password}
               type="password"
@@ -58,6 +73,7 @@ const Login = () => {
               name="password"
               id="password"
             ></input>
+            <p style={{marginBottom: "10px", color: "red"}}>{error}</p>
             <button type="submit">Login</button>
           </form>
         </div>
