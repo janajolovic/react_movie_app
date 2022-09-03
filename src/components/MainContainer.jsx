@@ -8,7 +8,7 @@ import MovieContext from '../MovieContext'
 
 const MainContainer = () => {
   
-  const {movies} = useContext(MovieContext)
+  const {filtered} = useContext(MovieContext)
 
   return (
     <div className='main_container'>
@@ -17,7 +17,7 @@ const MainContainer = () => {
           <Search />
           <Filters />
           <MoviesList />
-          {movies.length ? 
+          {filtered.length ? 
             <div className="pagination">
               <Pagination count={10} color="secondary" style={{color: "white"}} />
             </div>

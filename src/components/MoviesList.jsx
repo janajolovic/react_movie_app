@@ -11,8 +11,8 @@ const MoviesList = () => {
   }, [])
 
   return (
-    <div className={movies.length ? "movies_list" : "no_results"}>
-      {movies.length ? 
+    <div className={filtered.length ? "movies_list" : "no_results"}>
+      {filtered.length ? 
         filtered.map((movie) => {
           return <Movie key={movie.id} movie={movie} />;
         })
