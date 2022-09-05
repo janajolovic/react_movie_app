@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 import axios from "axios";
 import { useLocalStorage } from "./useLocalStorage";
+// import dotenv from "dotenv"
 
 const MovieContext = createContext();
 
@@ -10,12 +11,14 @@ export function MovieProvider({ children }) {
   const [filtered, setFiltered] = useState([]);
   const [favourites, setFavourites] = useLocalStorage("fav", []);
   const [user, setUser] = useLocalStorage("user", {})
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(1)
+
+  const API_KEY = process.env.REACT_APP_API_KEY
 
   const fetchPopular = async () => {
     try {
       let response = await axios
-        .get(`https://api.themoviedb.org/3/movie/popular?api_key=b454aa11fb4b5fc5b515d2e80a898a1c&language=en-US&page=${page}`)
+        .get(`https://api.themoviedb.org/3/movie/popular?api_key=` + API_KEY + `&language=en-US&page=${page}`)
         setMovies( 
           (prevState) => {
             if (prevState) {
@@ -37,11 +40,10 @@ export function MovieProvider({ children }) {
       }
     }
 
-
     const fetchSearch = async (query) => {
       try {
         let response = await axios
-        .get(`https://api.themoviedb.org/3/search/movie?api_key=b454aa11fb4b5fc5b515d2e80a898a1c&language=en-US&query=${query}&page=1&include_adult=false`)
+        .get(`https://api.themoviedb.org/3/search/movie?api_key=` + API_KEY + `&language=en-US&query=${query}&page=1&include_adult=false`)
         setMovies(response.data.results)
         setFiltered(response.data.results)
         setActiveGenre(0);
