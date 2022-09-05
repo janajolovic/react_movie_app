@@ -15,7 +15,6 @@ const Movie = ({movie}) => {
       exit={{ opacity: 0 }}
       layout
       className="movie"
-      key={movie.id}
     >
       {isFav(movie.id) ? (
         <FontAwesomeIcon 

@@ -6,8 +6,6 @@ import axios from "axios"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Details = () => {
-
-    const API_KEY = process.env.REACT_APP_API_KEY
     
     let params = useParams();
     let navigate = useNavigate();
@@ -16,7 +14,7 @@ const Details = () => {
     
     const fetchMovie = async (id) => {
         const res = await axios.get(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=` + API_KEY + `&language=en-US`
+        `https://api.themoviedb.org/3/movie/${id}?api_key=b454aa11fb4b5fc5b515d2e80a898a1c&language=en-US`
         );
         setMovie(res.data);
     };
