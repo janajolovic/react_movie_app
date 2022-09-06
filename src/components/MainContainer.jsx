@@ -3,6 +3,7 @@ import Sidebar from './Sidebar'
 import MoviesList from "./MoviesList"
 import Search from './Search'
 import Filters from './Filters'
+import Header from "./Header"
 import Pagination from '@mui/material/Pagination';
 import MovieContext from '../MovieContext'
 
@@ -16,13 +17,13 @@ const MainContainer = () => {
         <div style={{width: "100%"}}>
           <Search />
           <Filters />
+          <Header />
           <MoviesList />
           {filtered.length ? 
-            <div className="pagination">
-              
-                <button 
-                  onClick={() => {setPage((prevState) => prevState += 1)}}
-                  >Load more...</button>
+            <div className="load_more">
+              <button 
+                onClick={() => {setPage((prevState) => prevState += 1)}}
+                >Load more...</button>
             </div>
             : ""
           }

@@ -11,6 +11,7 @@ export function MovieProvider({ children }) {
   const [favourites, setFavourites] = useLocalStorage("fav", []);
   const [user, setUser] = useLocalStorage("user", {})
   const [page, setPage] = useState(1)
+  const [header, setHeader] = useState("Trending");
 
   const api_key = process.env.REACT_APP_API_KEY
 
@@ -33,6 +34,7 @@ export function MovieProvider({ children }) {
             ]
           } else return response.data.results
       })
+        setHeader("Trending");
         setActiveGenre(0);
       } catch (err) {
         console.log(err)
@@ -45,6 +47,7 @@ export function MovieProvider({ children }) {
         .get(`https://api.themoviedb.org/3/search/movie?api_key=` + api_key + `&language=en-US&query=${query}&page=1&include_adult=false`)
         setMovies(response.data.results)
         setFiltered(response.data.results)
+        setHeader(`Results for "${query}"`);
         setActiveGenre(0);
       } catch (err) {
         console.log(err)
@@ -70,6 +73,7 @@ export function MovieProvider({ children }) {
     const getFavourites = () => {
       setMovies(favourites);
       setFiltered(favourites);
+      setHeader("Your favourites");
       setActiveGenre(0);
     };
   
@@ -101,7 +105,10 @@ export function MovieProvider({ children }) {
         user,
         setUser,
         login,
-        page, setPage
+        page, 
+        setPage,
+        header,
+        setHeader
       }}
     >
       {children}

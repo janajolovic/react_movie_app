@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useContext } from 'react';
+import MovieContext from '../MovieContext';
 
 const Details = () => {
     
@@ -27,7 +29,9 @@ const Details = () => {
       
   return (
     <div className="details_container">
-        <FontAwesomeIcon className="back_icon" icon="fa-solid fa-arrow-left" onClick={() => navigate("/")}/>
+        <FontAwesomeIcon className="back_icon" icon="fa-solid fa-arrow-left" onClick={() => {
+            navigate("/")
+        }}/>
         <img src={"https://image.tmdb.org/t/p/w500" + movie?.poster_path} />
         <div className='details'>
             <h1>{movie?.title}</h1>
