@@ -9,12 +9,14 @@ const Details = () => {
     
     let params = useParams();
     let navigate = useNavigate();
+
+    const api_key = process.env.REACT_APP_API_KEY
     
     const [movie, setMovie] = useState();
     
     const fetchMovie = async (id) => {
         const res = await axios.get(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=b454aa11fb4b5fc5b515d2e80a898a1c&language=en-US`
+        `https://api.themoviedb.org/3/movie/${id}?api_key=` + api_key + `&language=en-US`
         );
         setMovie(res.data);
     };
