@@ -7,6 +7,8 @@ import MovieContext from '../MovieContext';
 const Sidebar = () => {
     const navigate = useNavigate()
 
+    const {getFavourites} = useContext(MovieContext)
+
     const {fetchPopular} = useContext(MovieContext)
   return (
     <div className='sidebar'>
@@ -20,7 +22,7 @@ const Sidebar = () => {
             <FontAwesomeIcon icon="fa-solid fa-fire-flame-curved" />
         </div>
         <div>
-            <FontAwesomeIcon icon="fa-solid fa-star" />
+            <FontAwesomeIcon icon="fa-solid fa-star" onClick={() => getFavourites()}/>
         </div>
         <div>
             <FontAwesomeIcon icon="fa-solid fa-circle-user" onClick={() => navigate("/login")}/>
