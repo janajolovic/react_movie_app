@@ -28,11 +28,7 @@ export function MovieProvider({ children }) {
             } else return response.data.results
         });
         setFiltered((prevState) => {
-          if (prevState) {
-            return [
-              ...prevState, ...response.data.results 
-            ]
-          } else return response.data.results
+          return response.data.results
       })
         setHeader("Trending");
         setActiveGenre(0);
