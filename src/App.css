@@ -241,6 +241,7 @@ body {
   outline: none;
   border-radius: 10px;
   font-size: 15px;
+  margin: 0px 10px;
 }
 
 .load_more button:hover {

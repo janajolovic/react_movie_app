@@ -12,6 +12,8 @@ const Details = () => {
     let params = useParams();
     let navigate = useNavigate();
 
+    const {setPage} = useContext(MovieContext)
+
     const api_key = process.env.REACT_APP_API_KEY
     
     const [movie, setMovie] = useState();
@@ -30,6 +32,7 @@ const Details = () => {
   return (
     <div className="details_container">
         <FontAwesomeIcon className="back_icon" icon="fa-solid fa-arrow-left" onClick={() => {
+            setPage(1)
             navigate("/")
         }}/>
         <img src={"https://image.tmdb.org/t/p/w500" + movie?.poster_path} />

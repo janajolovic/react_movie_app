@@ -21,8 +21,11 @@ const MainContainer = () => {
           {filtered.length && header === "Trending" ? 
             <div className="load_more">
               <button 
+                onClick={() => {setPage((prevState) => prevState -= 1)}}
+                >Prev page...</button>
+              <button 
                 onClick={() => {setPage((prevState) => prevState += 1)}}
-                >Load more...</button>
+                >Next page...</button>
             </div>
             : ""
           }

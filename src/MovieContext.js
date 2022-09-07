@@ -28,13 +28,8 @@ export function MovieProvider({ children }) {
             } else return response.data.results
         });
         setFiltered(
-          (prevState) => {
-            if (prevState) {
-              return [
-                ...prevState, ...response.data.results 
-              ]
-            }
-        });
+          response.data.results
+          );
         setHeader("Trending");
         setActiveGenre(0);
       } catch (err) {
