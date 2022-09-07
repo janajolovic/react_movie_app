@@ -4,7 +4,7 @@ import Movie from './Movie'
 
 const MoviesList = () => {
 
-  const {fetchPopular, filtered, page} = useContext(MovieContext)
+  const {fetchPopular, filtered, page, header} = useContext(MovieContext)
 
   useEffect(() => {
     fetchPopular()
@@ -16,7 +16,7 @@ const MoviesList = () => {
         filtered.map((movie) => {
           return <Movie key={movie.id} movie={movie} />;
         })
-      : <p>No results</p>
+      : header === "Trending" && (<p>No results</p>)
       }
       </div>
   )

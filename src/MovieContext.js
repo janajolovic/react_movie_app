@@ -27,9 +27,14 @@ export function MovieProvider({ children }) {
               ]
             } else return response.data.results
         });
-        setFiltered((prevState) => {
-          return response.data.results
-      })
+        setFiltered(
+          (prevState) => {
+            if (prevState) {
+              return [
+                ...prevState, ...response.data.results 
+              ]
+            }
+        });
         setHeader("Trending");
         setActiveGenre(0);
       } catch (err) {
@@ -70,6 +75,11 @@ export function MovieProvider({ children }) {
       setFiltered(favourites);
       setHeader("Your favourites");
       setActiveGenre(0);
+      
+      if (!user.email) setHeader("You need to be logged in")
+      else if (favourites.length === 0) {
+        setHeader("No favourites yet")
+      }
     };
   
     const isFav = (id) => {
