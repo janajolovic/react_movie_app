@@ -20,13 +20,8 @@ export function MovieProvider({ children }) {
       let response = await axios
         .get(`https://api.themoviedb.org/3/movie/popular?api_key=` + api_key + `&language=en-US&page=${page}`)
         setMovies( 
-          (prevState) => {
-            if (prevState) {
-              return [
-                ...prevState, ...response.data.results 
-              ]
-            } else return response.data.results
-        });
+         response.data.results
+        );
         setFiltered(
           response.data.results
           );

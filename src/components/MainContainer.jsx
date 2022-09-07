@@ -5,6 +5,7 @@ import Search from './Search'
 import Filters from './Filters'
 import Header from "./Header"
 import MovieContext from '../MovieContext'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const MainContainer = () => {
   
@@ -22,10 +23,13 @@ const MainContainer = () => {
             <div className="load_more">
               <button 
                 onClick={() => {setPage((prevState) => prevState -= 1)}}
-                >Prev page...</button>
+                >
+                  <FontAwesomeIcon icon="fa-solid fa-arrow-left"/>
+              </button>
               <button 
                 onClick={() => {setPage((prevState) => prevState += 1)}}
-                >Next page...</button>
+                ><FontAwesomeIcon icon="fa-solid fa-arrow-right"/>
+              </button>
             </div>
             : ""
           }
